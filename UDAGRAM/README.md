@@ -16,7 +16,7 @@ There will be two parts to this project:
 
 2. CloudFormation script for Infrastructure as a Code:
 
-Download the code from GITHUB repository: (https://github.com/PritikaGargArora/PritikaGargArora_learning) 
+**Download the code from GITHUB repository**: (https://github.com/PritikaGargArora/PritikaGargArora_learning)
 
 I have divided CloudFormation script into multiple parts:
 
@@ -31,33 +31,33 @@ d.  bastionhost folder :  To deploy the bastion host on the public subnets using
 e.  server foler   :  To deploy a stack with all 4 private servers, Load balancers, Autoscaling and Cloud watch alarms.
 
 ## Deployment Steps:
---> Execute the below to create public and private keys and upload to AWS.
+- Execute the below to create public and private keys and upload to AWS.
  ./utils/create-secure-key.sh
  
---> Execute the below to create iam stack with all the relevant roles and policies for accessing the public S3 bucket provided by Udacity.
+- Execute the below to create iam stack with all the relevant roles and policies for accessing the public S3 bucket provided by Udacity.
  ./utils/create-stack.sh iam-stack iam/iam-stack-template.yml iam/iam-parameters.json
  
---> Execute the below to create network stack with all network components.
+- Execute the below to create network stack with all network components.
  ./utils/create-stack.sh network-stack network/network-stack-template.yml network/network-parameters.json
  
---> Execute the below to create bastion host stack, to be deployed on the public subnets.
+- Execute the below to create bastion host stack, to be deployed on the public subnets.
  ./utils/create-stack.sh bastionhost-stack bastionhost/bastionhost-stack-template.yml bastionhost/bastionhost-parameters.json
  
--->Execute the below to create server stack, to be deployed on private subnets.
+- Execute the below to create server stack, to be deployed on private subnets.
  ./utils/create-stack.sh server-stack server/server-stack-template.yml server/server-parameters.json
  
-**Website link (output from the Load Balancer) -
+***Website link (output from the Load Balancer)*** -
 
 ## Rollback -
 Scripts to rollback the cloud formation stacks:
 
- ./utils/delete-stack.sh server-stack
+ - ./utils/delete-stack.sh server-stack
 
- ./utils/delete-stack.sh bastionhost-stack
+ - ./utils/delete-stack.sh bastionhost-stack
 
- ./utils/delete-stack.sh network-stack
+ - ./utils/delete-stack.sh network-stack
  
- ./utils/delete-stack.sh iam-stack
+ - ./utils/delete-stack.sh iam-stack
  
- ./utils/delete-secure-key.sh
+ - ./utils/delete-secure-key.sh
 
