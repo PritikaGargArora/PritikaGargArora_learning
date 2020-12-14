@@ -12,7 +12,7 @@ There will be two parts to this project:
 
 1. A diagram to understand the CloudFormation script.
 
-
+![alt text](https://github.com/PritikaGargArora/PritikaGargArora_learning/blob/main/UDAGRAM/Pritika_project2_Udagram.jpeg?raw=true)
 
 2. CloudFormation script for Infrastructure as a Code:
 
@@ -20,31 +20,36 @@ There will be two parts to this project:
 
 I have divided CloudFormation script into multiple parts:
 
-a.  utils folder   :  Bash scripts to create / destroy public and private keys. Along with that, for creating, updating and deleting cloudformation stacks.
+a.  **utils** folder   :  Bash scripts to create / destroy public and private keys. Along with that, for creating, updating and deleting cloudformation stacks.
 
-b.  iam folder     :  To deploy a stack with iam roles and policies for accessing the public S3 bucket.
+b.  **iam** folder     :  To deploy a stack with iam roles and policies for accessing the public S3 bucket.
 
-c.  network folder :  To deploy the vpc, subnets and other network components used in this project.
+c.  **network** folder :  To deploy the vpc, subnets and other network components used in this project.
 
-d.  bastionhost folder :  To deploy the bastion host on the public subnets using elastic ip address.
+d.  **bastionhost** folder :  To deploy the bastion host on the public subnets using elastic ip address.
 
-e.  server foler   :  To deploy a stack with all 4 private servers, Load balancers, Autoscaling and Cloud watch alarms.
+e.  **server** folder   :  To deploy a stack with all 4 private servers, Load balancers, Autoscaling and Cloud watch alarms.
 
 ## Deployment Steps:
 - Execute the below to create public and private keys and upload to AWS.
- ./utils/create-secure-key.sh
+
+./utils/create-secure-key.sh
  
 - Execute the below to create iam stack with all the relevant roles and policies for accessing the public S3 bucket provided by Udacity.
- ./utils/create-stack.sh iam-stack iam/iam-stack-template.yml iam/iam-parameters.json
+
+./utils/create-stack.sh iam-stack iam/iam-stack-template.yml iam/iam-parameters.json
  
 - Execute the below to create network stack with all network components.
- ./utils/create-stack.sh network-stack network/network-stack-template.yml network/network-parameters.json
+
+./utils/create-stack.sh network-stack network/network-stack-template.yml network/network-parameters.json
  
 - Execute the below to create bastion host stack, to be deployed on the public subnets.
- ./utils/create-stack.sh bastionhost-stack bastionhost/bastionhost-stack-template.yml bastionhost/bastionhost-parameters.json
+
+./utils/create-stack.sh bastionhost-stack bastionhost/bastionhost-stack-template.yml bastionhost/bastionhost-parameters.json
  
 - Execute the below to create server stack, to be deployed on private subnets.
- ./utils/create-stack.sh server-stack server/server-stack-template.yml server/server-parameters.json
+
+./utils/create-stack.sh server-stack server/server-stack-template.yml server/server-parameters.json
  
 ***Website link (output from the Load Balancer)*** -
 
