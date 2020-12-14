@@ -53,6 +53,8 @@ e.  **server** folder   :  To deploy a stack with all 4 private servers, Load ba
  
 ***Website link (output from the Load Balancer)*** -
 
+http://serve-WebAp-OL15WV6RLTAG-1836605732.us-west-2.elb.amazonaws.com
+
 ## Rollback -
 Scripts to rollback the cloud formation stacks:
 
